@@ -33,11 +33,13 @@ def toppings(passed_pizza):
 
 
 def salad():
-    print("Would you like a garden salad or greek salad?")
+    salad_choise = input("Would you like a garden salad or greek salad?")
+    dressing(salad_choise)
 
 
 def dressing():
     print("Please choose a dressing...")
+
 
 
 select_meal()
