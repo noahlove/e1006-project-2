@@ -13,10 +13,10 @@ def select_meal():
 
 def pizza():
     pizza_size = input("Small, medium, or large?")
-    toppings()
+    toppings(pizza_size)
 
 
-def toppings():
+def toppings(passed_pizza):
     # ask for toppings repeatedly until the user types "done"
     more_toppings = True
     toppings_list = []
@@ -28,7 +28,7 @@ def toppings():
         else:
             toppings_list.append(topping)
     # Add the and between last 2 toppings
-    print("You ordered a" + "PIZZA FIX THIS" + "with", ', '.join(toppings_list))
+    print("You ordered a", passed_pizza + " pizza with", ', '.join(toppings_list))
     pizza()
 
 
@@ -41,4 +41,3 @@ def dressing():
 
 
 select_meal()
-
