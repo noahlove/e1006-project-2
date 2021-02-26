@@ -12,7 +12,8 @@ def select_meal():
 
 
 def pizza():
-    print("small medium or large?")
+    pizza_size = input("small, medium, or large?")
+    toppings()
 
 
 def toppings():
