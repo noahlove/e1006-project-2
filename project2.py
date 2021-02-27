@@ -9,20 +9,20 @@ def select_meal():
         if pizza_or_salad == "pizza" or pizza_or_salad == "Pizza":
             pizza_statement = pizza()
             if total_order == []:
-                total_order = "You ordered a " + pizza_statement
+                total_order = "You ordered a " + pizza_statement + "!"
                 print(total_order)
             else:
-                total_order = total_order + " and a " + pizza_statement
+                total_order = total_order + " You also ordered a " + pizza_statement + "."
                 print(total_order)
 
         # Salad Order
         elif pizza_or_salad == "salad" or pizza_or_salad == "Salad":
             salad_statement = salad()
             if total_order == []:
-                total_order = "You ordered a " + salad_statement
+                total_order = "You ordered a " + salad_statement + "!"
                 print(total_order)
             else:
-                total_order = total_order + " and a " + salad_statement
+                total_order = total_order + " You also ordered a " + pizza_statement + "."
                 print(total_order)
 
         # Done exit
@@ -34,7 +34,6 @@ def select_meal():
             print("You didn't pick one of the two options")
 
         print("Place another order or say 'done'.")
-
 
 
 def pizza():
@@ -55,7 +54,10 @@ def toppings(pizza_size):
         else:
             toppings_list.append(topping)
     # Add the and between last 2 toppings
-    toppings_list = ",".join(toppings_list[:-1]) + " and " + toppings_list[-1]
+    toppings_list = " and ".join([", ".join(toppings_list[:-1]), toppings_list[-1]] if len(toppings_list) > 2 else
+                                 toppings_list)
+
+
     pizza_order = pizza_size + " pizza with " + toppings_list
     return pizza_order
 
@@ -74,5 +76,3 @@ def dressing(salad_choice):
 
 select_meal()
 print("Your order has been placed. Goodbye")
-
-
