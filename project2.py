@@ -1,5 +1,3 @@
-#imports?
-
 def select_meal():
     more_food = True
     pizza_statement = []
@@ -9,14 +7,20 @@ def select_meal():
         pizza_or_salad = input("Hello, would you like pizza or salad?\n")
         if pizza_or_salad == "pizza" or pizza_or_salad == "Pizza":
             pizza_statement = pizza()
+            if salad_statement == []:
+                print("You ordered a", pizza_statement, ". Place another order or say 'done'.")
+            else:
+                print("You ordered a ", pizza_statement, "and a", salad_statement)
         elif pizza_or_salad == "salad" or pizza_or_salad == "Salad":
             salad_statement = salad()
+            if pizza_statement == []:
+                print("You ordered a", salad_statement, ". Place another order or say 'done'.")
+            else:
+                print("You ordered a ", salad_statement, "and a", pizza_statement)
         elif pizza_or_salad == "done" or pizza_or_salad == "done":
             more_food = False
         else:
             print("You didn't pick one of the two options")
-        print("you ordered a", pizza_statement, "and a", salad_statement)
-
 
 
 def pizza():
