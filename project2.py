@@ -2,13 +2,13 @@ def select_meal():
     more_food = True
     total_order = []
     # ask the user repeatedly to add an item until the user types "done"
-    while more_food == True:
+    while more_food:
         pizza_or_salad = input("Hello, would you like pizza or salad?\n")
 
         # Pizza order
         if pizza_or_salad == "pizza" or pizza_or_salad == "Pizza":
             pizza_statement = pizza()
-            if total_order == []:
+            if not total_order:
                 total_order = "You ordered a " + pizza_statement + "!"
                 print(total_order)
             else:
@@ -18,7 +18,7 @@ def select_meal():
         # Salad Order
         elif pizza_or_salad == "salad" or pizza_or_salad == "Salad":
             salad_statement = salad()
-            if total_order == []:
+            if not total_order:
                 total_order = "You ordered a " + salad_statement + "!"
                 print(total_order)
             else:
@@ -47,7 +47,7 @@ def toppings(pizza_size):
     more_toppings = True
     toppings_list = []
 
-    while more_toppings == True:
+    while more_toppings:
         topping = input("Add a topping: pepperoni, mushrooms, spinach, or say 'done'\n")
         if topping == "done":
             more_toppings = False
@@ -56,7 +56,6 @@ def toppings(pizza_size):
     # Add the and between last 2 toppings
     toppings_list = " and ".join([", ".join(toppings_list[:-1]), toppings_list[-1]] if len(toppings_list) > 2 else
                                  toppings_list)
-
 
     pizza_order = pizza_size + " pizza with " + toppings_list
     return pizza_order
