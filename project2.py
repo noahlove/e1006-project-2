@@ -22,7 +22,7 @@ def select_meal():
                 total_order = "You ordered a " + salad_statement + "!"
                 print(total_order)
             else:
-                total_order = total_order + " You also ordered a " + pizza_statement + "."
+                total_order = total_order + " You also ordered a " + salad_statement + "."
                 print(total_order)
 
         # Done exit
@@ -62,8 +62,8 @@ def toppings(pizza_size):
 
 
 def salad():
-    salad_choise = input("Would you like a garden salad or greek salad?\n")
-    salad_order_full = dressing(salad_choise)
+    salad_choice = input("Would you like a garden salad or greek salad?\n")
+    salad_order_full = dressing(salad_choice)
     return salad_order_full
 
 
