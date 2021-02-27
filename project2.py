@@ -5,20 +5,28 @@ def select_meal():
     # ask the user repeatedly to add an item until the user types "done"
     while more_food == True:
         pizza_or_salad = input("Hello, would you like pizza or salad?\n")
+
+        # Pizza order
         if pizza_or_salad == "pizza" or pizza_or_salad == "Pizza":
             pizza_statement = pizza()
             if salad_statement == []:
                 print("You ordered a", pizza_statement, ". Place another order or say 'done'.")
             else:
                 print("You ordered a ", pizza_statement, "and a", salad_statement)
+
+        # Salad Order
         elif pizza_or_salad == "salad" or pizza_or_salad == "Salad":
             salad_statement = salad()
             if pizza_statement == []:
                 print("You ordered a", salad_statement, ". Place another order or say 'done'.")
             else:
                 print("You ordered a ", salad_statement, "and a", pizza_statement)
+
+        # Done exit
         elif pizza_or_salad == "done" or pizza_or_salad == "done":
             more_food = False
+
+        # Don't pick pizza or salad?
         else:
             print("You didn't pick one of the two options")
 
