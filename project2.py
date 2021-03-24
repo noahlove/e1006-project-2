@@ -43,7 +43,7 @@ def pizza():
 
 
 def toppings(pizza_size):
-    # ask for toppings repeatedly until the user types "done"
+    # ask for toppings repceatedly until the user types "done"
     more_toppings = True
     toppings_list = []
 
